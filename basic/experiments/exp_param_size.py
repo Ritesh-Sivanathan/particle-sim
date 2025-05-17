@@ -5,7 +5,7 @@ Varying and testing different parameter sizes for a Particle.
 '''
 
 
-from particle import Particle
+from ..particle import Particle
 import random
 import matplotlib.pyplot as plt
 
@@ -17,11 +17,11 @@ myParticle.change_velocity(1,1,1)
 
 while counter < 25000:
 
-    V_Lower = 0.85
+    V_Lower = -0.85
     V_Upper = 0.95
 
-    DT_Lower = 0.8
-    DT_Upper = 1.1
+    DT_Lower = 1.2
+    DT_Upper = 2.2
     
     print(myParticle.update_particle_position())
     myParticle.change_velocity(myParticle.velocity.real*(random.uniform(V_Lower,V_Upper)), myParticle.velocity.imag*(random.uniform(V_Lower,V_Upper)), myParticle.delta_time*(round(random.uniform(DT_Lower, DT_Upper), 3)))

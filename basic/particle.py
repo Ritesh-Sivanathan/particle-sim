@@ -1,6 +1,13 @@
 
 class Particle:
 
+    '''
+    
+    Particle class to create particle objects.
+    Instantiating a particle object using this class takes no arguments
+    
+    '''
+
     def __init__(self):
         
         # All properties will be set to 0. Start at the origin and no movement until it is explicitly set.

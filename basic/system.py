@@ -1,8 +1,8 @@
-from particle import Particle
+from .particle import Particle
 
 class System:
 
-    def __init__(self):
+    def __init__(self, particles):
         self.particles:list[Particle] = []
         self.bounds = [0, 0]
 
@@ -11,14 +11,28 @@ class System:
         for particle in self.particles:
             print(particle)
 
-    def check_collision(self):
+    def particle_positions(self):
 
         posx = []
-        posy = []
+        posy= []
 
         for particle in self.particles:
             posx.append(particle.position.real)
             posy.append(particle.position.imag)
+        
+        return (posx, posy)
+
+    def particle_velocities(self):
+
+        vx = []
+        vy = []
+
+        for particle in self.particles:
+            vx.append(particle.velocity.real)
+            vy.append(particle.velocity.imag)
+        
+        return (vx, vy)
+        
         
         
         

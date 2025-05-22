@@ -16,7 +16,7 @@ class Particle:
         self.velocity = complex(0, 0) # Complex velocity. In form vx+ivy. In (units/second)
         self.delta_time = 1.
 
-    def change_velocity(self, x, y, dt): # Update the velocity of the particle at 1 second intervals
+    def change_velocity(self, x, y, dt): # Override the previous velocity of the particle at 1 second intervals
         
         '''
         Change the velocity of the particle in units/second.
@@ -27,6 +27,10 @@ class Particle:
         self.velocity = complex(x,y) # Update the velocity property of the object
         self.delta_time = dt # Update the delta_time of the velocity
         return self.velocity # Return the velocity (would return a complex number vx, ivy)
+
+    def modify_velocity(self, x, y, dt):
+
+        pass
     
     def update_particle_position(self):
         

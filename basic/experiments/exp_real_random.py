@@ -28,5 +28,5 @@ for _ in range(500):
     data[1].append(py)
 
 fig, ax = plt.subplots()
-ax.plot(data[0], data[1])
+ax.plot(data[1], data[0])
 plt.show()

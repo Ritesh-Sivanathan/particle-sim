@@ -42,6 +42,5 @@ plt.axvline(x=10, c="blue")
 plt.axhline(y=0, c="red")
 plt.axhline(y=10, c="red")
 
-plt.savefig()
 plt.plot(data[0], data[1])
 plt.show()

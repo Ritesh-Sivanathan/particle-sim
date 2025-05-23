@@ -1,3 +1,9 @@
+'''
+
+Unit tests for various functionality
+
+'''
+
 import unittest
 from particle import Particle
 

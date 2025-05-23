@@ -1,3 +1,9 @@
+'''
+
+Particle object definition
+Particle functions -> change_velocity, modify_velocity (incomplete), update_particle_position
+
+'''
 
 class Particle:
 
@@ -39,7 +45,17 @@ class Particle:
         '''
 
         pos = complex((self.position.real + (self.velocity.real*self.delta_time)), (self.position.imag + (self.velocity.imag*self.delta_time))) # Increment the position x and y by adding the respective velocities multiplied by the delta time
-        
+    
         self.position = pos # Update the object's velocity property
+        return pos
 
-        return (self.position.real, self.position.imag)
+    def sim_particle_position(self):
+        
+        '''
+        Returns the expected position after velocity change and dt.
+        Utilizes exact same logic as update_particle_position function, but doesn't actually update the particle's position.
+        '''
+
+        pos = complex((self.position.real + (self.velocity.real*self.delta_time)), (self.position.imag + (self.velocity.imag*self.delta_time))) # Increment the position x and y by adding the respective velocities multiplied by the delta time
+    
+        return pos

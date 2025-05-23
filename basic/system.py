@@ -1,3 +1,9 @@
+'''
+
+System of particles. Collision logic will be implemented here.
+
+'''
+
 from .particle import Particle
 
 class System:

@@ -38,7 +38,7 @@ class Particle:
 
     """
 
-    def __init__(self, px=0, py=0, vx=1, vy=1, dt=1, min_x=0, max_x=10, min_y=0, max_y=10, logging=True):
+    def __init__(self, name="particle", px=0, py=0, vx=1, vy=1, dt=1, min_x=0, max_x=10, min_y=0, max_y=10, logging=True):
         
         self.px = px
         self.py = py
@@ -54,10 +54,11 @@ class Particle:
         self.max_y = max_y
         
         self.logging = logging
+        self.name = name
 
         self.data = [[], []]
 
-    def _handle_collision(self):
+    def _update_position(self):
 
         ''' Particle position and boundary collision update logic. '''
 
@@ -100,13 +101,23 @@ class Particle:
         self.data[0].append(self.px)
         self.data[1].append(self.py)
         
-    def loop(self, iterations):
+    def loop(self, iterations, system=False):
+
+        """
+        
+        Main particle loop.
+        Collisions and data logging are handled in this function.
+        
+        """
 
         for _ in range(iterations): # Loop over number of iterations provided
 
-            self._handle_collision()
+            self._update_position()
 
             if self.logging:
                 self._log_position()
 
+        if system:
+            return [self.px, self.py]
+            
         return self.data
